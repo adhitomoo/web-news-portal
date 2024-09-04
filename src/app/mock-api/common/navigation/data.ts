@@ -36,6 +36,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'aside',
         icon : 'heroicons_outline:tv',
         link : '/example'
+    },
+    {
+      id   : 'platform',
+      title: 'Platform',
+      type : 'aside',
+      icon : 'heroicons_outline:tv',
+      link : '/example'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
