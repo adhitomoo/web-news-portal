@@ -792,4 +792,8 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
         // Execute the observable
         this.openedChanged.next(open);
     }
+
+    public navigate(item: FuseNavigationItem): void {
+      this._router.navigate([item.link]);
+    }
 }

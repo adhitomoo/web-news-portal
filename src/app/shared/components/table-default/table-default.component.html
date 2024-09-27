@@ -1,0 +1,58 @@
+<table mat-table [dataSource]="rows" class="mat-elevation-z0">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  @for (col of columns; track col) {
+
+    @if (col.prop !== 'action' && col.prop !== 'status') {
+      <ng-container matColumnDef="{{ col.prop }}">
+        <th mat-header-cell *matHeaderCellDef> {{col.title }} </th>
+        <td mat-cell *matCellDef="let element"> {{element[ col.prop ]}} </td>
+      </ng-container>
+    }
+
+    @if (col.prop === 'action') {
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>{{ col.title }}</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="flex flex-row gap-3">
+            <button mat-icon-button>
+              <mat-icon *ngIf="element.action.includes('view')">visibility</mat-icon>
+            </button>
+
+            <button mat-icon-button>
+              <mat-icon *ngIf="element.action.includes('edit')">edit</mat-icon>
+            </button>
+
+            <button mat-icon-button>
+              <mat-icon *ngIf="element.action.includes('delete')">delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+    }
+
+    @if (col.prop === 'status') {
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> {{ col.title }} </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="py-2 px-4 rounded-2xl text-white w-fit" [class]="element[ col.prop ] | status">
+            {{ element[ col.prop ] | status: 'text' }}
+          </div>
+        </td>
+      </ng-container>
+    }
+  }
+
+  <tr mat-header-row *matHeaderRowDef="defaultColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: defaultColumns;"></tr>
+</table>
+<mat-paginator
+  class="mat-elevation-z0"
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page">
+</mat-paginator>

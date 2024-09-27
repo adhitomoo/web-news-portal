@@ -1,0 +1,17 @@
+<div class="w-full">
+  <page-default [title]="'Article'" [subtitle]="'Create article module'">
+    <ng-container content>
+      <div class="flex flex-row flex-wrap">
+          <div class="w-full">
+            <div class="flex flex-row justify-end mb-4">
+              <button class="btn bg-blue-500 hover:bg-blue-700 py-2 px-3 rounded-xl flex flex-row gap-2 items-center" (click)="createArticle()">
+                <mat-icon class="text-white">add</mat-icon>
+                <div class="text-white">Create Article</div>
+              </button>
+            </div>
+            <table-default class="flex-auto" [columns]="columns" [rows]="rows"></table-default>
+          </div>
+        </div>
+    </ng-container>
+  </page-default>
+</div>

@@ -70,11 +70,16 @@ export const appRoutes: Route[] = [
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         component: LayoutComponent,
+        data: {
+            layout: 'classy'
+        },
         resolve: {
             initialData: initialDataResolver
         },
         children: [
-            {path: 'example', loadChildren: () => import('app/modules/admin/example/example.routes')},
+          {path: 'example', loadChildren: () => import('app/modules/admin/example/example.routes')},
+          {path: 'platform', loadChildren: () => import('app/modules/admin/platform/platform.routes')},
+          {path: 'article', loadChildren: () => import('app/modules/admin/article/article.routes')},
         ]
     }
 ];

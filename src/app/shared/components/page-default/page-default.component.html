@@ -1,0 +1,10 @@
+<ng-container>
+  <div class="m-8">
+    <h4 class="text-4xl">{{ title }}</h4>
+    <span class="text-xl">{{ subtitle }}</span>
+
+    <div class="py-4 my-4 h-auto flex flex-col flex-wrap">
+      <ng-content select="[content]"></ng-content>
+    </div>
+  </div>
+</ng-container>

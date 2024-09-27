@@ -14,35 +14,35 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: 'Category',
         type : 'aside',
         icon : 'heroicons_outline:rectangle-group',
-        link : '/example'
+        link : '/category'
     },
     {
         id   : 'articles',
         title: 'Article',
         type : 'aside',
         icon : 'heroicons_outline:newspaper',
-        link : '/example'
+        link : '/article'
     },
     {
         id   : 'tags',
         title: 'Tags',
         type : 'aside',
         icon : 'heroicons_outline:tag',
-        link : '/example'
+        link : '/tag'
     },
     {
         id   : 'ads',
         title: 'Ads',
         type : 'aside',
         icon : 'heroicons_outline:tv',
-        link : '/example'
+        link : '/ads'
     },
     {
       id   : 'platform',
       title: 'Platform',
       type : 'aside',
       icon : 'heroicons_outline:tv',
-      link : '/example'
+      link : '/platform'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
